@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título de la ventana del navegador -->
+    <title>Exquisiteses el Maná</title>
+
+    <!-- Iconos para la página -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+
+<style>
+
+    /* Variables globales */
+    :root {
+        --colorTextos: rgb(75, 25, 60);
+        /* La propiedad background-color no es necesaria aquí */
+    }
+    
+    /* Estilos básicos */
+    * {
+        padding: 0; /* Eliminamos padding para todos los elementos */
+        margin: 0; /* Eliminamos margen para todos los elementos */
+        box-sizing: border-box; /* Para que el padding y el borde se incluyan en el tamaño total de los elementos */
+        text-decoration: none; /* Sin subrayado en enlaces */
+        list-style: none; /* Sin viñetas en listas */
+
+        color: rgb(75, 25, 60);
+    }
+    
+    /* Definición de fuente personalizada */
+    @font-face {
+        font-family: 'Exotc350';
+        src: url('Estilo_Texto/EXOT350B.TTF') format('truetype'); /* Formato TrueType (.ttf) */
+        font-weight: normal; /* Peso de la fuente */
+        font-style: normal; /* Estilo de la fuente */
+    }
+
+    @font-face {
+        font-family: 'Gothy';
+        src: url('Estilo_Texto/GOTHICB.TTF') format('truetype'); /* Formato TrueType (.ttf) */
+        font-weight: normal; /* Peso de la fuente */
+        font-style: normal; /* Estilo de la fuente */
+    }
+
+    /* Estilos de la página */
+    body {
+
+        width: 100%;        /* Establece la anchura de la pagina */
+        height: 100%;     /* Establece la altura de la pagina */
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Centra el contenido verticalmente */
+        align-items: center; /* Centra el contenido horizontalmente */
+
+        overflow: hidden; /* Deshabilita todo el scroll */
+        
+    }
+
+    /*Cambiar el fondo de la pagina*/
+    .section {
+        min-height: 100vh;
+        transition: background-image 0.5s ease-in-out;
+        margin-bottom: 80px; /* Añade un margen inferior de 10px a cada sección */
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Distribuye el espacio entre los elementos hijos */
+    }
+
+    /*
+    -----------------------------------------------------------
+    -----------------------------------------------------------
+    -----------------------------------------------------------
+    -----------------------------------------------------------
+    -----------------------------------------------------------
+    -----------------------------------------------------------
+    CABEZA
+    -----------------------------------------------------------
+    -----------------------------------------------------------
+    -----------------------------------------------------------
+    -----------------------------------------------------------
+    -----------------------------------------------------------
+    -----------------------------------------------------------
+    */
+
+    /* Estilos para el header */
+    header {
+        width: 100%; /* El header ocupa el 100% del ancho de la pantalla */
+        height: 80px; /* Altura del header */
+        display: flex; /* Utiliza flexbox para alinear elementos */
+        justify-content: center; /* Centra horizontalmente */
+        align-items: center;     /* Centra verticalmente */
+        text-align: center;      /* Centra el texto dentro del contenedor */
+        
+        flex-direction: column; /* Coloca los elementos en columna */
+        
+        align-items: center;     /* Centra los elementos en columna */
+
+        top: 0; /* Posiciona el header en la parte superior */
+        left: 0; /* Posiciona el header en el lado izquierdo */
+    
+        z-index: 1000; /* Asegura que el header esté por encima de otros elementos */
+        
+        overflow: hidden; /* Deshabilita todo el scroll */
+        
+    }
+
+    .Cabeza {
+        display: flex;
+        flex-direction: column;  /* Coloca los elementos en columna */
+        align-items: center;     /* Centra los elementos en columna */
+        
+        background-size: cover; /* Ajusta la imagen para cubrir toda el área */
+        background-position: center; /* Centra la imagen */
+        background-repeat: no-repeat; /* Evita que la imagen se repita */
+    }
+
+    /* Estilos para la imagen principal centrada */
+    .logo-principal {
+        width: 100px; /* Ajusta el ancho de la imagen principal según sea necesario */
+        height: auto; /* Mantiene la proporción de la imagen */
+        margin: 0 auto; /* Margen automático para centrar la imagen */
+    }
+    
+    /* Estilos para la imagen en la esquina izquierda */
+    .logo-secundaria {
+        width: 50px; /* Ajusta el ancho de la imagen secundaria según sea necesario */
+        height: auto; /* Mantiene la proporción de la imagen */
+        position: absolute; /* Posiciona absolutamente la imagen */
+        left: 250px; /* Ajusta la posición desde el lado izquierdo */
+    }
+    
+    /* Contenedor para el contenido principal */
+    .contenedor {
+        position: relative; /* Posiciona el contenedor relativamente */
+        left: -75%; /* Mueve el contenedor un 25% a la izquierda */
+    }
+    
+    #menuToggle {
+        display: none; /* Oculta el checkbox para el menú */
+    }
+    
+    #menu {
+        display: none; /* Oculta el menú inicialmente */
+        position: absolute; /* Posiciona el menú absolutamente */
+        top: 80px; /* Posiciona el menú 50px desde la parte superior */
+        left: 250px; /* Posiciona el menú 50px desde la izquierda */
+        background-color: #fff; /* Fondo blanco para el menú */
+        padding: 10px; /* Padding de 10px alrededor del menú */
+        border: 1px solid #ccc; /* Borde gris claro para el menú */
+        font-family: 'Exotc350', Arial, sans-serif; /* Fuente personalizada para el menú */
+        color: rgb(75, 25, 60); /* Color del texto */
+    }
+    
+    #menuToggle:checked + label + #menu {
+        display: block; /* Muestra el menú cuando el checkbox está marcado */
+    }
+    
+    /*
+    -----------------------------------------------------------
+    -----------------------------------------------------------
+    -----------------------------------------------------------
+    -----------------------------------------------------------
+    -----------------------------------------------------------
+    -----------------------------------------------------------
+    CUERPO
+    -----------------------------------------------------------
+    -----------------------------------------------------------
+    -----------------------------------------------------------
+    -----------------------------------------------------------
+    -----------------------------------------------------------
+    -----------------------------------------------------------
+    */
+
+    .Fondo {
+        width: 900px;        /* Establece la anchura de la pagina */
+        height: 630px;     /* Establece la altura de la pagina */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Distribuye el espacio entre los elementos hijos */
+
+        background-size: cover; /* Ajusta la imagen para cubrir toda el área */
+        background-position: center; /* Centra la imagen */
+        background-repeat: no-repeat; /* Evita que la imagen se repita */
+
+        overflow: hidden; /* Deshabilita todo el scroll */
+
+        transition: background-image 1s ease-in-out; /* Transición suave */
+        background-image: url("Fotos/Fondo_Compu_Inicio.jpg");
+    }
+
+    /* Clase para el fondo final */
+    .fondo-final {
+        background-image: url("Fotos/Fondo_Compu_Final.jpg");
+    }
+
+
+    /* Clase para el encabezado con fondo */
+    .header-final {
+        background-image: none;    
+    }
+
+    /* Clase para el pie de página con fondo */
+    .footer-final {
+        background-image: none;   
+    }
+
+    .Tronco {
+
+        height: 390px;
+        width: 800px;
+        
+        position: absolute; /* Posiciona el elemento relativamente a su primer ancestro posicionado */
+        top: 140px; /* Espacio entre el header y el contenido centrado */
+        left: 50%; /* Posiciona el elemento en el centro horizontalmente */
+        transform: translateX(-50%); /* Transforma el elemento para que esté perfectamente centrado */
+        text-align: center; /* Alinea el texto en el centro */
+        padding: 20px; /* Espaciado interno del contenido */
+        /*border: 1px solid #ccc; /* Borde gris claro */
+        /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para el efecto de elevación */
+
+        background-color: transparent;  /*hace que el fondo sea transparente*/
+        overflow-y: auto; /* Añade scroll vertical si es necesario */
+
+        gap: 100px; /* Esto añade un espacio de 10px entre cada hijo directo del contenedor .Cuerpo */
+
+    }
+
+    .seccion {
+        padding: 20px; /* Espaciado interno alrededor de la sección */
+
+        margin-bottom: 300px; /* Ajusta el valor según tus necesidades */
+        
+        display: flex; /* Utiliza flexbox para el diseño */
+        flex-direction: column; /* Organiza los elementos en columna */
+        justify-content: space-between; /* Distribuye el espacio uniformemente entre los elementos hijos */
+    }
+
+    /*estilo de la seccion Inicial*/
+    .Titular {
+
+        font-size: 20px; /* Tamaño actual de las letras */
+        text-align: center; /* Alinea el texto en el centro */
+        font-family: 'Exotc350', 'Arial', sans-serif; /* Fuente personalizada */
+
+    }
+
+    .logo_Inicio { /*estilo de la foto al principio*/
+
+        height: 250px;
+        width: auto;
+
+    }
+
+
+
+    .Foto_Titular_Los_Altos_Encontrarnos {
+
+        height: 80px;
+        width: 50%;
+
+    }
+
+    .Foto_Los_Altos {
+
+        height: 300px;
+        width: auto;
+
+    }
+
+    .Titulo {
+
+        font-size: 20px; /* Tamaño actual de las letras */
+        color: rgb(75, 25, 60);
+        text-align: center; /* Alinea el texto en el centro */
+
+        font-family: 'Exotc350', 'Arial', sans-serif; /* Fuente personalizada */
+
+    }
+
+    .Cuerpo {
+
+        font-size: 15px; /* Tamaño actual de las letras */
+        padding: 20px;
+        font-family: 'Gothy', 'Arial', sans-serif; /* Fuente personalizada */
+        color: rgb(75, 25, 60);
+        text-align: center; /* Alinea el texto en el centro */
+
+    }
+
+    /* styles.css */
+    /* Multi_Menu de Galeria */
+
+    /* Contenedor del menú */
+    .menu-container {
+        margin: 20px; /* Márgenes exteriores */
+
+        background-image: url('Fotos/Menu_Barra.png'); /* Cambia a la ruta de tu imagen */
+        background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
+        background-position: center; /* Centra la imagen */
+        background-repeat: no-repeat; /* Evita que la imagen se repita */
+    }
+
+    /* Estilos para la lista del menú */
+    .menu ul {
+        list-style-type: none; /* Quita los puntos de la lista */
+        padding: 0; /* Elimina el padding predeterminado */
+    }
+
+    /* Estilos para los elementos de primer nivel del menú */
+    .menu > ul > li {
+        display: inline-block; /* Muestra los elementos en línea */
+        position: relative; /* Posición relativa para el posicionamiento de submenús */
+        margin-right: 30px; /* Márgen derecho entre elementos */
+        margin-left: 30px; /* Márgen izquierdo entre elementos */
+    }
+
+    /* Estilos para los enlaces del menú */
+    .menu a {
+        text-decoration: none; /* Quita la decoración de texto */
+        color: rgb(75, 25, 60); /* Color del texto */
+        padding: 10px 15px; /* Padding interno */
+        display: block; /* Muestra como bloque para ocupar el ancho completo */
+        /*background-color: #f0f0f0; /* Color de fondo */
+        border-radius: 5px; /* Bordes redondeados */
+
+        
+        font-family: 'Exotc350', 'Arial', sans-serif; /* Fuente personalizada */
+    }
+
+    /* Estilos para los submenús */
+    .menu ul ul {
+        display: none; /* Oculta los submenús por defecto */
+        position: absolute; /* Posición absoluta para el posicionamiento */
+        top: 100%; /* Alinea el submenú con la parte inferior del elemento padre */
+        left: 0; /* Alinea el submenú con la izquierda del elemento padre */
+        /*background-color: #f0f0f0; /* Color de fondo */
+        border-radius: 5px; /* Bordes redondeados */
+        padding: 0; /* Padding interno */
+        list-style: none; /* Quita los puntos de la lista */
+    }
+
+    /* Estilos para los elementos de los submenús */
+    .menu ul ul li {
+        display: block; /* Muestra los elementos como bloque */
+        margin: 0; /* Elimina el margen */
+    }
+
+    /* Estilos para los enlaces de los submenús */
+    .menu ul ul a {
+        padding: 10px 15px; /* Padding interno */
+    }
+
+    /* Mostrar el submenú al pasar el ratón sobre el elemento */
+    .menu li:hover > ul {
+        display: block; /* Muestra el submenú al hacer hover */
+    }
+
+    /* Contenedor de la imagen */
+    .image-container {
+        display: flex; /* Utiliza flexbox para el diseño */
+        justify-content: center; /* Centra horizontalmente los elementos */
+        align-items: center; /* Centra verticalmente los elementos */
+        width: 100%; /* Ancho completo */
+        height: 60vh; /* Altura fija, ajusta según sea necesario */
+        margin-top: 60px; /* Margen superior */
+    }
+
+    /* Estilos para la imagen */
+    .image-container img {
+        max-width: 300px; /* Ancho máximo del 100% del contenedor */
+        max-height: 300px; /* Altura máxima del 100% del contenedor */
+        display: block; /* Muestra como bloque */
+    }
+
+
+    /* Separador al final de cada seccion */
+    .Separador {
+
+        height: 20px;
+        width: 600;
+        margin-top: 20px;
+    
+    }
+    
+
+    /*
+    -----------------------------------------------------------
+    -----------------------------------------------------------
+    -----------------------------------------------------------
+    -----------------------------------------------------------
+    -----------------------------------------------------------
+    -----------------------------------------------------------
+    PIES
+    -----------------------------------------------------------
+    -----------------------------------------------------------
+    -----------------------------------------------------------
+    -----------------------------------------------------------
+    -----------------------------------------------------------
+    -----------------------------------------------------------
+    */
+
+    /* Estilos para el footer */
+    footer {
+        width: 100%; /* Asegura que el footer ocupe el 100% del ancho de la pantalla */
+        height: 100px;
+        text-align: center; /* Alinea el texto en el centro */
+        padding: 20px; /* Espaciado interno del footer */
+        margin-top: 20px; /* Espacio de separación respecto al cuerpo */
+        bottom: 0;
+        left: 0;
+        display: flex; /* Utiliza flexbox en el footer */
+        justify-content: center; /* Centra horizontalmente los elementos dentro del footer */
+        align-items: center; /* Centra verticalmente los elementos dentro del footer */
+        flex-direction: column; /* Coloca los elementos en columna */
+        overflow: hidden; /* Deshabilita todo el scroll */
+
+        
+        background-size: cover; /* Ajusta la imagen para cubrir toda el área */
+        background-position: center; /* Centra la imagen */
+        background-repeat: no-repeat; /* Evita que la imagen se repita */
+        margin-top: auto; /* Empuja el footer hacia abajo */
+    }
+
+    /* Estilos para el contenedor del footer */
+    .pies {
+        text-align: center; /* Alinea el texto en el centro */
+        padding: 0px; /* Padding de 20px */
+        width: 100%; /* Ancho completo */
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .Titular_Contacto {
+
+        margin: 5px; /* Margen de separacion */
+        text-align: center; /* Alinea el texto en el centro */
+        font-size: 20px; /* Tamaño actual de las letras */
+        font-family: 'Exotc350', 'Arial', sans-serif; /* Fuente personalizada */
+
+    }
+
+    .column_text {
+
+        text-align: center; /* Alinea el texto en el centro */
+        font-size: 15px; /* Tamaño actual de las letras */
+        font-family: 'Gothy', 'Arial', sans-serif; /* Fuente personalizada */
+
+    }
+
+    /* Contenedor principal */
+    .container {
+        display: flex; /* Utiliza flexbox para alinear las columnas */
+        justify-content: center; /* Centra horizontalmente las columnas */
+        width: 80%; /* Ancho*/
+        height: 80%; /*Alto*/
+
+        text-align: center; /* Alinea el texto en el centro */
+        left: 250px;
+        
+    }
+
+    /* Estilos para las columnas dentro del footer */
+    .column {
+        background-color: transparent; /* Fondo blanco para las columnas */
+        padding: 5px; /* Espaciado interno */
+        margin: 5px; /* Margen alrededor de las columnas */
+        border-radius: 8px; /* Bordes redondeados */
+        /*box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Sombra para dar efecto de elevación */
+        flex: 1; /* Permite que las columnas crezcan y se encogen */
+        min-width: 200px; /* Ancho mínimo de las columnas */
+
+        text-align: center; /* Alinea el texto en el centro */
+        display: none; /* Ocultar inicialmente */
+    }
+
+
+
+
+
+
+    /*
+    -----------------------------------------------------------
+    -----------------------------------------------------------
+    -----------------------------------------------------------
+    -----------------------------------------------------------
+    -----------------------------------------------------------
+    -----------------------------------------------------------
+    FORMATO CELULARES 
+    -----------------------------------------------------------
+    -----------------------------------------------------------
+    -----------------------------------------------------------
+    -----------------------------------------------------------
+    -----------------------------------------------------------
+    -----------------------------------------------------------
+    */
+
+    /* Media Queries para dispositivos móviles 290px  580px */
+    @media (max-width: 720px) {
+
+        /* CABEZA */
+        header {
+            height: auto; /* Ajuste de altura para dispositivos móviles */
+            padding: 20px; /* Espaciado interno */
+        }
+
+        .logo-principal {
+            width: 80px; /* Ajuste de ancho de la imagen principal */
+        }
+
+        .logo-secundaria {
+            width: 40px; /* Ajuste de ancho de la imagen secundaria */
+            left: 50px; /* Ajusta la posición desde el lado izquierdo */
+        }
+
+        .contenedor {
+            left: 0; /* Ajuste de posición */
+        }
+
+        #menu {
+            left: 30px; /* Posiciona el menú 50px desde la izquierda */
+        }
+
+        /*
+        -----------------------------------------------------------
+        -----------------------------------------------------------
+        -----------------------------------------------------------
+        -----------------------------------------------------------
+        */
+
+        /* CUERPO */
+        .Fondo {
+
+            width: 380px;        /* Establece la anchura de la pagina */
+            height: 650px;     /* Establece la altura de la pagina */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Distribuye el espacio entre los elementos hijos */
+        
+            background-size: cover; /* Ajusta la imagen para cubrir toda el área */
+            background-position: center; /* Centra la imagen */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
+            
+            padding: 10px;
+            margin: 10px;
+        
+        }
+
+        /* Estilo_Pagina/Estilo.css */
+
+        /* Clase para el fondo inicial */
+        .fondo-inicial {
+            background-image: url("Fotos/Fondo_Telefono_Inicio.jpg");
+        }
+
+        /* Clase para el fondo final */
+        .fondo-final {
+            background-image: url("Fotos/Fondo_Telefono_Final.jpg");
+        }
+
+
+        .Tronco {
+            width: 360px; /* Ajuste de ancho */
+            height: 400px;
+            padding: 10px; /* Ajuste de padding */
+            gap: 10px; /* Ajuste de espacio entre elementos */
+        }
+
+        .Titular {
+
+            font-size: 13px; /* Tamaño actual de las letras */
+            text-align: center; /* Alinea el texto en el centro */
+
+        }
+
+        .Titulo {
+
+            font-size: 13px; /* Tamaño actual de las letras */
+            text-align: center; /* Alinea el texto en el centro */
+
+        }
+
+        .Cuerpo {
+
+            font-size: 11px; /* Tamaño actual de las letras */
+            text-align: center; /* Alinea el texto en el centro */
+
+        }
+
+        .logo_Inicio { /*estilo de la foto al principio*/
+
+            height: 200px;
+            width: auto;
+        
+        }
+
+        .Foto_Titular_Los_Altos_Encontrarnos {
+
+            height: 50px;
+            width: 200px;
+        
+        }
+
+        .Foto_Los_Altos {
+
+            height: 140px;
+            width: auto;
+        
+        }
+
+        /* Carusel en modo telefono */
+        .menu-container {
+            width: 300px; /* Ajuste de ancho */
+            height: 15px; /* Ajuste de alto */
+    
+            margin: 0px; /* Márgenes exteriores */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    
+            /* Cambia a la ruta de tu imagen url("../Fotos/Menu_Barra.png") */
+            background-image: url("Fotos/Menu_Tlf.png");
+        }
+    
+        /* Estilos para los elementos de primer nivel del menú */
+        .menu > ul > li {
+            display: inline-block; /* Muestra los elementos en línea */
+            position: relative; /* Posición relativa para el posicionamiento de submenús */
+            margin-right: 5.0px; /* Márgen derecho entre elementos */
+            margin-left: 5.0px; /* Márgen izquierdo entre elementos */
+        }
+    
+        /* Estilos para los enlaces del menú */
+        .menu a {
+            text-decoration: none; /* Quita la decoración de texto */
+            color: rgb(75, 25, 60); /* Color del texto */
+            padding: 0px 0px; /* Padding interno */
+            display: block; /* Muestra como bloque para ocupar el ancho completo */
+            border-radius: 0px; /* Bordes redondeados */
+            
+        }
+    
+        /* Estilos para los enlaces de los submenús */
+        .menu ul ul a {
+            padding: 0px 0px; /* Padding interno */
+        }
+    
+        /* Contenedor de la imagen */
+        .image-container {
+            width: 100%; /* Ancho completo */
+            height: auto; /* Ajusta la altura para pantallas pequeñas */
+            margin-top: 100px; /* Ajusta el margen superior según sea necesario */
+            display: flex; /* Utiliza flexbox para el diseño */
+            justify-content: center; /* Centra horizontalmente los elementos */
+            align-items: center; /* Centra verticalmente los elementos */
+        }
+    
+        
+    
+        /* Estilos para la imagen */
+        .image-container img {
+            max-width: 90%; /* Ancho máximo del 90% del contenedor */
+            height: auto; /* Mantiene la proporción de la imagen */
+            display: block; /* Muestra como bloque */
+            
+            margin-left: 20px; /* mover a la izquierda la foto para centrar */
+        }
+
+
+        /* Separador al final de cada Seccion */
+        .Separador {
+
+            height: 10px;
+            width: 300;
+            margin-top: 20px;
+    
+        }
+
+        /*
+        -----------------------------------------------------------
+        -----------------------------------------------------------
+        -----------------------------------------------------------
+        -----------------------------------------------------------
+        */
+
+        /* PIES */
+        footer {
+            padding: 0px; /* Ajuste de padding */
+            height: auto; /* Ajuste de altura */
+        }
+
+        .Titular_Contacto {
+
+            font-size: 13px; /* Ajuste de tamaño de fuente */
+            margin: 0px; /* Margen de separacion */
+
+        }
+
+        .column_text {
+
+            font-size: 12px; /* Ajuste de tamaño de fuente */
+
+        }
+
+        .column {
+            
+            padding: 0px; /* Espaciado interno */
+            margin: 0px; /* Margen alrededor de las columnas */
+            flex: 1; /* Permite que las columnas crezcan y se encogen */
+            min-width: 80px; /* Ancho mínimo de las columnas */
+
+        }
+    }
+
+</style>
+
+<!-- Cuerpo del programa (contiene todo lo que se ve en la página) -->
+<body>
+
+    <div class="Fondo">
+
+        <!-- ####################### -->
+        <!-- Cabeza de la Pagina Web -->
+        <!-- ####################### -->
+        <header>
+            <div class="Cabeza">
+                <input type="checkbox" id="menuToggle">
+                <label for="menuToggle">
+                    <img src="Fotos/Boton_cruvo.png" alt="Menú" class="logo-secundaria">
+                </label>
+                <nav id="menu">
+                    <ul>
+                        <li><a href="#Inicio">Inicio</a></li>
+                        <li><a href="#Nosotros">¿Quienes somos?</a></li>
+                        <li><a href="#Encontrar">Encuentranos</a></li>
+                        <li><a href="#Producto">Nuestros Productos</a></li>
+                    </ul>
+                </nav>
+                <!--<img src="../Exquisiteses_El_Maná/Fotos/nombre_Empresa.jpg" alt="Logo Principal" class="logo-principal">-->
+            </div>
+        </header>
+        
+        
+
+        <!-- ####################### -->
+        <!-- Cuerpo de la Pagina Web -->
+        <!-- ####################### -->
+
+        <div class="Tronco" id="tronco">
+
+            <!-- Sección de Inicio -->
+            <div class="seccion" id="Inicio">
+                <div class="Titular">
+                    <h1>Te Encantará nuestro</h1>
+                    <h1> </h1>
+                    <h1>Rincón en la Montaña</h1>
+                </div>
+
+                <!-- Contenedor para el logo -->
+                <section class="contenido_Principal" id="contenido">
+                    <div class="contenido_Principal" id="contenidouno">
+                        <img src="Fotos/LOGO_Final.png" alt="Logo Mana" class="logo_Inicio">
+                    </div>
+                </section>
+
+                <!-- <img src="Fotos/Divisor.png" alt="" class="Separador"> -->
+
+            </div><!-- *************** -->
+
+
+
+            <!-- Sección para presentarnos -->
+            <div class="seccion" id="Nosotros">
+                
+                <!-- Titulo -->
+                <div class="titulo">
+
+                    <h1>¿Quienes Somos?</h1>
+
+                </div>
+
+                <!-- presentacion -->
+                <div class="Cuerpo">
+
+                    <h3>
+                        Después de años viviendo en una comunidad turística, la familia Figuera Mago decidió abrir 
+                        la Panadería y Pastelería Exquisiteces el Maná. Esto les permite proveer a los 
+                        visitantes con una parada extra en el paseo y un lugar para relajarse con algo para merendar. 
+                        Es un punto de reunión para miembros de la comunidad y proveen productos básicos y frescos a diario.
+                    </h3>
+
+                </div>
+
+                <img src="Fotos/Divisor.png" alt="" class="Separador">
+
+            </div><!-- *************** -->
+
+
+
+            <!-- Sección para encontrarnos -->
+            <div class="seccion" id="Encontrar">
+                
+                <!-- Foto_Los_ALtos -->
+                <div class="Titular_Los_Altos">
+
+                    <img src="Fotos/Titula_Los_Altos.png" alt="Los_Altos" class="Foto_Titular_Los_Altos_Encontrarnos">
+
+                </div>
+
+                <!-- Foto_Los_ALtos -->
+                <div class="Los_Altos">
+
+                    <a href="https://maps.app.goo.gl/EA946aeX6okJq5XLA"><img src="Fotos/Encuentranos.png" alt="Los_Altos" class="Foto_Los_Altos"></a>
+
+                </div>
+
+                <!-- Datos de Localizacion -->
+                <div class="Cuerpo">
+
+                    <h3></h3>
+                    <h3>Click en la imagen, para ver el GoogleMaps</h3>
+                    <h3></h3>
+
+                </div>
+
+                <img src="Fotos/Divisor.png" alt="" class="Separador">
+
+            </div><!-- *************** -->
+
+            <!-- Sección para productos -->
+            <div class="seccion" id="Producto">
+                
+                <div class="Centrar_Galeria">
+                        
+                    <!-- Titulo -->
+                    <div class="titulo">
+
+                        <h1>Nuestros Productos</h1>
+
+                    </div>
+
+                    <!-- presentacion <h3></h3> -->
+                    <div class="Cuerpo">
+
+                        <h3>
+                            Exquisiteces el Maná se enorgullece en ofrecer productos hechos a mano 
+                            y hacer pedidos personalizados para eventos locales.
+                            Además de ofrecer otra clase de productos que son necesarios para 
+                            el consumo.
+                        </h3>
+
+                    </div>
+                    
+                    <!-- Galería -->
+                    <div class="Cuerpo_Carusel">
+                        <div class="menu-container">
+                            <nav class="menu">
+                                <ul>
+                                    <!-- Menu de Panaderia -->
+                                    <li>
+                                        <a href="#">Panadería</a>
+                                        <ul class="submenu">
+                                            <li data-image="Fotos/Panaderia_1.jpg"><a href="#">Pan Dulce</a></li>
+                                            <li data-image="Fotos/Panaderia_2.jpg"><a href="#">Pan Salado</a></li>
+                                        </ul>
+                                    </li>
+                                    <!-- Menu de Pastelería -->
+                                    <li>
+                                        <a href="#">Pastelería</a>
+                                        <ul class="submenu">
+                                            <li data-image="Fotos/Pasteleria_1.jpg"><a href="#">Repostería para Eventos</a></li>
+                                            <li data-image="Fotos/Pasteleria_2.jpg"><a href="#">Dulces de Conserva</a></li>
+                                            <li data-image="Fotos/Pasteleria_3.jpg"><a href="#">Galletas Varias</a></li>
+                                        </ul>
+                                    </li>
+                                    <!-- Menu de Abasto -->
+                                    <li>
+                                        <a href="#">Abasto</a>
+                                        <ul class="submenu">
+                                            <li data-image="Fotos/Abasto_1.jpg"><a href="#">Chuchería</a></li>
+                                            <li data-image="Fotos/Abasto_2.jpg"><a href="#">Vegetales</a></li>
+                                        </ul>
+                                    </li>
+                                    <!-- Menu de Quincalla -->
+                                    <li>
+                                        <a href="#">Quincalla</a>
+                                        <ul class="submenu">
+                                            <li data-image="Fotos/Quincalla_1.jpg"><a href="#">Viveres</a></li>
+                                            <li data-image="Fotos/Quincalla_2.jpg"><a href="#">Papelería & Costura</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="image-container">
+                            <img id="displayedImage" src="Fotos/LOGO_Final.png" alt="Imagen mostrada">
+                        </div>
+                    
+                        <script>
+                            // scripts.js
+
+                            document.addEventListener('DOMContentLoaded', function() {
+                                const submenuItems = document.querySelectorAll('.submenu li');
+                                const displayedImage = document.getElementById('displayedImage');
+
+                                submenuItems.forEach(item => {
+                                    item.addEventListener('click', function(e) {
+                                        e.preventDefault();
+                                        const imageSrc = item.getAttribute('data-image');
+                                        displayedImage.src = imageSrc;
+                                    });
+                                });
+                            });
+                        </script>
+                    </div>
+                
+                    <!-- Controles ocultos -->
+                    <input type="checkbox" id="carousel-control" hidden>
+                
+                    <script>
+                        document.addEventListener('DOMContentLoaded', () => {
+                            const prevButton = document.querySelector('.carousel-prev');
+                            const nextButton = document.querySelector('.carousel-next');
+                            const items = document.querySelectorAll('.carousel-item');
+                            let currentIndex = 0;
+                        
+                            function updateCarousel() {
+                                const width = items[0].clientWidth;
+                                const newTransformValue = -width * currentIndex;
+                                document.querySelector('.carousel-items').style.transform = `translateX(${newTransformValue}px)`;
+                            }
+                        
+                            prevButton.addEventListener('click', () => {
+                                currentIndex = (currentIndex - 1 + items.length) % items.length;
+                                updateCarousel();
+                            });
+                        
+                            nextButton.addEventListener('click', () => {
+                                currentIndex = (currentIndex + 1) % items.length;
+                                updateCarousel();
+                            });
+                        });
+                        
+                    </script>
+                
+                </div>
+
+            </div>
+
+            <img src="Fotos/Divisor.png" alt="" class="Separador">
+    
+        </div><!-- *************** -->
+
+
+
+        <!-- ####################### -->
+        <!-- Pies de la Pagina Web -->
+        <!-- ####################### -->
+        <footer>
+            <div class="pies" id="Contactanos">
+                <div class="Titular_Contacto">
+                    <h2>Contáctanos</h2>
+                </div>
+
+                <!-- Contenedor principal -->
+                <div class="container">
+                    <!-- Primera columna -->
+                    <div class="column">
+                        <p class="column_text">Telefono: 0416–3980341</p>
+                        <p class="column_text">Correo: <a href="mailto:const.jm2016@gmail.com" class="email-link">const.jm2016@gmail.com</a></p>
+                        <p class="column_text">Instagram: <a href="https://www.instagram.com/manaexquisitecesel" class="instagram-link" target="_blank">manaexquisitecesel</a></p>
+                    </div>
+
+                    <!-- Segunda columna -->
+                    <!-- <div class="column">
+                        <p class="column_text">Instagram: <a href="https://www.instagram.com/manaexquisitecesel" class="instagram-link" target="_blank">manaexquisitecesel</a></p>
+                    </div> -->
+                </div>
+            </div>
+        </footer>
+
+        <!-- Hacer visibles las columnas al hacer scroll -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const tronco = document.getElementById('tronco');
+                const sectionToObserve = document.getElementById('Inicio'); // Cambia 'sectionToObserve' por el ID de tu sección específica
+            
+                // Función para mostrar las columnas
+                function mostrarColumnas() {
+                    document.querySelectorAll('.column').forEach(column => {
+                        column.style.display = 'block';
+                    });
+                }
+            
+                // Función para ocultar las columnas
+                function ocultarColumnas() {
+                    document.querySelectorAll('.column').forEach(column => {
+                        column.style.display = 'none';
+                    });
+                }
+            
+                // Crear un IntersectionObserver para observar la visibilidad de la sección específica
+                const intersectionObserver = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (!entry.isIntersecting) {
+                            // La sección específica ha dejado de ser visible
+                            mostrarColumnas();
+                        } else {
+                            // La sección específica es visible
+                            ocultarColumnas();
+                        }
+                    });
+                }, { threshold: [0] });
+            
+                // Observar la sección específica
+                intersectionObserver.observe(sectionToObserve);
+            });
+        </script>
+            
+            
+            
+    
+        <!-- Cambiar las imagenes del fondo al hacer scroll -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const fondo = document.querySelector('.Fondo');
+                const tronco = document.getElementById('tronco');
+            
+                function cambiarTransparenciaFondo() {
+                    if (tronco.scrollTop > 0) {
+                        fondo.classList.add('fondo-final');
+                    } else {
+                        fondo.classList.remove('fondo-final');
+                    }
+                }
+            
+                tronco.addEventListener('scroll', cambiarTransparenciaFondo);
+                // Ejecutar una vez al cargar la página
+                cambiarTransparenciaFondo();
+            });
+        </script>
+
+    </div> 
+
+</body>
+
+</html>
